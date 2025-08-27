@@ -1,0 +1,88 @@
+#############################################
+# dk window manager - exemplo de configuração
+#############################################
+
+# ----- Aparência -----
+set border_width 2
+set gap_width 5
+set focus_color "#268bd2"
+set unfocus_color "#444444"
+set urgent_color "#dc322f"
+set border_radius 0
+
+# ----- Layout -----
+# Layout inicial: tile (master + stack)
+set layout tile
+
+# Local do master: centro
+set master_location center
+
+# Mestre ocupa 70% da tela
+set master_factor 0.70
+
+# Máximo de mestres (normalmente 1)
+set master_count 1
+
+# Alternar layouts disponíveis (pode incluir monocle, grid, floating)
+set layouts tile monocle grid floating
+
+# ----- Workspaces -----
+# Define 9 desktops (pode mudar os nomes)
+set desktops 1 2 3 4 5 6 7 8 9
+
+# ----- Atalhos -----
+# Mod (Super/Windows key)
+set mod Mod4
+
+# Abrir terminal (altere para seu terminal preferido)
+bind $mod+Return spawn alacritty
+
+# Fechar janela
+bind $mod+Shift+q kill
+
+# Focar nas janelas (setas hjkl estilo vim)
+bind $mod+h focus left
+bind $mod+l focus right
+bind $mod+k focus up
+bind $mod+j focus down
+
+# Mover janelas
+bind $mod+Shift+h move left
+bind $mod+Shift+l move right
+bind $mod+Shift+k move up
+bind $mod+Shift+j move down
+
+# Alternar layouts
+bind $mod+t layout tile
+bind $mod+m layout monocle
+bind $mod+g layout grid
+bind $mod+f layout floating
+
+# Alternar janelas (como Alt+Tab)
+bind $mod+Tab cycle
+
+# Aumentar/diminuir espaço do mestre
+bind $mod+Shift+plus set master_factor +0.05
+bind $mod+Shift+minus set master_factor -0.05
+
+# Trocar desktops
+bind $mod+1 use 1
+bind $mod+2 use 2
+bind $mod+3 use 3
+bind $mod+4 use 4
+bind $mod+5 use 5
+bind $mod+6 use 6
+bind $mod+7 use 7
+bind $mod+8 use 8
+bind $mod+9 use 9
+
+# Mover janela para desktop
+bind $mod+Shift+1 send 1
+bind $mod+Shift+2 send 2
+bind $mod+Shift+3 send 3
+bind $mod+Shift+4 send 4
+bind $mod+Shift+5 send 5
+bind $mod+Shift+6 send 6
+bind $mod+Shift+7 send 7
+bind $mod+Shift+8 send 8
+bind $mod+Shift+9 send 9
